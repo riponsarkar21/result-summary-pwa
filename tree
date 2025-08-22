@@ -1,0 +1,10 @@
+result-summary-pwa/
+├─ index.html
+├─ style.css
+├─ script.js
+├─ manifest.json
+├─ service-worker.js
+├─ icons/
+│   ├─ icon-192x192.png
+│   ├─ icon-512x512.png
+└─ README.md

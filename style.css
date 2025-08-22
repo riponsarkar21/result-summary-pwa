@@ -1,0 +1,335 @@
+:root {
+  /* Primary */
+  --light-red-500: hsla(0, 100%, 67%, 1);
+  --orangey-yellow-500: hsla(39, 100%, 56%, 1);
+  --green-teal-500: hsla(166, 100%, 37%, 1);
+  --cobalt-blue-500: hsla(234, 85%, 45%, 1);
+
+  /* Gradients */
+  --light-state-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --violet-blue: hsla(256, 72%, 46%, 1);
+
+  /* Neutrals */
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-red: hsla(0, 100%, 67%, 0.05);
+  --orangey-yellow: hsla(39, 100%, 56%, 0.05);
+  --green-teal: hsla(166, 100%, 37%, 0.05);
+  --cobalt-blue: hsla(234, 85%, 45%, 0.05);
+
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --dark-gray-blue-500: hsl(224, 30%, 27%);
+  --dark-gray-blue-200: hsl(224, 5%, 40%);
+
+  --light-lavender: hsl(241, 100%, 89%);
+  --light-lavender-5: hsla(241, 100%, 89%, 0.5);
+  --light-lavender-8: hsla(241, 100%, 89%, 0.8);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap");
+
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 1s cubic-bezier(0.5, 0.2, 0.2, 0.8);
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  height: 100dvh;
+  background-color: var(--pale-blue);
+}
+
+main {
+  height: min(100% - 3.5rem, 100%);
+  width: 100%;
+  background-color: inherit;
+}
+
+.font-medium {
+  font-weight: 700;
+}
+
+.font-bold {
+  font-weight: 800;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-1 {
+  gap: 0.5rem;
+}
+
+.card {
+  flex-direction: column;
+  min-height: 32rem;
+  min-width: 22.9375rem;
+  padding: 2.5rem 3rem;
+  border-radius: 35px;
+  background: var(--_card-bg, var(--black));
+  color: var(--_font-color, var(--dark-gray-blue-500));
+}
+
+.result-card {
+  --_card-bg: linear-gradient(var(--light-state-blue), var(--light-royal-blue));
+  --_font-color: var(--white);
+  max-width: 237px;
+  justify-content: space-between;
+}
+
+.result-card p {
+  color: var(--light-lavender-8);
+}
+
+.result-card .result {
+  gap: 1.5rem;
+}
+
+.result-card .score {
+  min-height: 12.5rem;
+  min-width: 12.5rem;
+  border-radius: 50%;
+  background: linear-gradient(var(--violet-blue), transparent);
+}
+
+.result-card .score span {
+  font-size: 4rem;
+}
+
+.result-card .feedback {
+  gap: 1.2rem;
+  padding: 0.5rem;
+}
+
+.result-card .feedback span {
+  font-size: 2rem;
+}
+
+.summary-card {
+  --_card-bg: var(--white);
+  --_font-color: var(--dark-gray-blue-500);
+  justify-content: space-between;
+}
+
+.summary-card .break-down {
+  height: 100%;
+  min-width: 100%;
+  gap: 0.5rem;
+}
+
+.summary-card .tile {
+  border-radius: 12px;
+  height: fit-content;
+  width: 100%;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: var(--_tile-color, var(--light-red));
+}
+
+.summary-card .tile .source {
+  flex-grow: 1;
+  color: var(--_font-color, var(--light-red-500));
+}
+
+.summary-card .tile .dim {
+  color: var(--dark-gray-blue-200);
+}
+
+.summary-card .btn-pri {
+  height: 50px;
+  width: 100%;
+  background: var(--dark-gray-blue-500);
+  color: var(--white);
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.summary-card .btn-pri:hover {
+  background: linear-gradient(var(--light-state-blue), var(--light-royal-blue));
+}
+
+.reaction {
+  --_tile-color: var(--light-red);
+  --_font-color: var(--light-red-500);
+}
+
+
+.memory {
+  --_tile-color: var(--orangey-yellow);
+  --_font-color: var(--orangey-yellow-500);
+}
+
+.verbal {
+  --_tile-color: var(--green-teal);
+  --_font-color: var(--green-teal-500);
+}
+
+.visual {
+  --_tile-color: var(--cobalt-blue);
+  --_font-color: var(--cobalt-blue-500);
+}
+
+.cards-wrapper {
+  max-width: 100%;
+  background-color: var(--white);
+  border-radius: 35px;
+  box-shadow: 10px 10px 40px var(--light-lavender-5);
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.5em;
+  color: var(--light-lavender-8);
+}
+
+/* Responsive */
+@media (max-width: 740px) {
+  .cards-wrapper {
+    flex-direction: column;
+    margin-top: 100%;
+  }
+
+  #footer {
+    margin-top: 100%;
+  }
+}
+
+@media (max-width: 435px) {
+  .card {
+    padding: 2rem 2.5rem;
+    min-width: 20rem;
+    min-height: 30rem;
+    font-size: 16px;
+  }
+
+  .result-card {
+    min-height: 28rem;
+  }
+
+  .result-card .score {
+    min-height: 10rem;
+    min-width: 10rem;
+  }
+
+  .result-card .score span {
+    font-size: 3rem;
+  }
+
+  .result-card .feedback span {
+    font-size: 1.7rem;
+  }
+}
+
+#footer {
+  justify-content: space-between;
+  width: 100%;
+  padding: 50px 30px;
+  text-align: center;
+  background: var(--white);
+}
+
+#footer hr {
+  height: 2px;
+  max-width: 37%;
+  min-width: 30%;
+  background: linear-gradient(to left, var(--light-state-blue), var(--light-royal-blue));
+}
+
+#footer .sec-hr {
+  background: linear-gradient(to right, var(--light-state-blue), var(--light-royal-blue));
+}
+
+#footer a {
+  padding: 15px 20px;
+  background-color: var(--dark-gray-blue-500);
+  color: white;
+  border-radius: 15px;
+  transition: background 0.2s ease-in-out;
+}
+
+#footer a:hover {
+  background-color: var(--light-red-500);
+  color: var(--black);
+}
+
+
+
+.tile .inputs {
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tile input {
+  width: 70px;
+  padding: 5px;
+  border: 1px solid var(--dark-gray-blue-200);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.tile span {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.summary-card .tile {
+  display: flex;
+  align-items: center; /* ✅ vertically center Store, Packer, etc. with inputs */
+  justify-content: space-between;
+  border-radius: 12px;
+  height: fit-content;
+  width: 100%;
+  padding: 8px;
+  background-color: var(--_tile-color, var(--light-red));
+}
+
+.summary-card .tile .source {
+  flex: 0 0 120px;   /* ✅ fixed width so all labels align neatly */
+  text-align: left;
+  color: var(--_font-color, var(--light-red-500));
+}
+
+.tile .inputs input[readonly] {
+  background-color: #e0e0e0; /* light gray for readonly */
+  border: 1px solid #ccc;
+  color: #333;
+  font-weight: bold;
+  cursor: not-allowed;
+  text-align: right;
+  padding-right: 1px;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.summary-header span {
+  font-weight: bold;
+  color: var(--dark-gray-blue-500);
+  padding-right: 10px;
+}
